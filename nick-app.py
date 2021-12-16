@@ -51,7 +51,7 @@ Number of Earthquakes in the US in 2021 over 2.5 Magnitude:
 
 
 """
-To provide a bit of context, please see the table below provided by 
+To provide a bit of context, please see the table below provided by Michigan Tech's [website](https://www.mtu.edu/geo/community/seismology/learn/earthquake-measure/magnitude/).
 """
 
 st.image("https://raw.githubusercontent.com/bronsonnh/streamlit_repo/main/eq_table.png")
