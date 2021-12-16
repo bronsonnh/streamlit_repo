@@ -24,10 +24,6 @@ This dashboard will allow users to look into the earthquake data, and filter it 
 Perhaps you can answer the question: Have earthquakes been increasing in number or severity in the US, particularly on the West Coast.
 """
 
-"""
-![Imga](https://github.com/bronsonnh/streamlit_repo/blob/main/eq_table.png)
-"""
-
 def upload_data():
     #Function to load csv data into streamlit  
     data = pd.read_csv('https://raw.githubusercontent.com/bronsonnh/streamlit_repo/main/eq_df_v2.csv')
@@ -58,6 +54,9 @@ Number of Earthquakes in the US in 2021 over 2.5 Magnitude:
 To provide a bit of context, please see the table below provided by 
 """
 
+"""
+![Imga](https://github.com/bronsonnh/streamlit_repo/blob/main/eq_table.png)
+"""
 
 
 """
