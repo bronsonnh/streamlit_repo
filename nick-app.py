@@ -24,6 +24,9 @@ This dashboard will allow users to look into the earthquake data, and filter it 
 Perhaps you can answer the question: Have earthquakes been increasing in number or severity in the US, particularly on the West Coast.
 """
 
+"""
+![Imga](https://github.com/bronsonnh/streamlit_repo/blob/main/eq_table.png)
+"""
 
 def upload_data():
     #Function to load csv data into streamlit  
