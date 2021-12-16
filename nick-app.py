@@ -58,8 +58,6 @@ Number of Earthquakes in the US in 2021 over 2.5 Magnitude:
 To provide a bit of context, please see the table below provided by 
 """
 
-image = Image.open('https://raw.githubusercontent.com/bronsonnh/streamlit_repo/main/eq_table.png')
-st.image(image)
 
 
 """
