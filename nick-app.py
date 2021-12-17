@@ -104,6 +104,6 @@ mag_filter_o = or_boundary['mag'] >= mag_input_o
 st.map(or_boundary.loc[month_filter_o & year_filter_o & mag_filter_o, ['latitude', 'longitude']])
 
 
-
+ 
 
 
