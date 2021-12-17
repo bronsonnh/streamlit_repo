@@ -26,7 +26,7 @@ Perhaps you can answer the question: Have earthquakes been increasing in number 
 
 def upload_data():
     #Function to load csv data into streamlit  
-    data = pd.read_csv('https://raw.githubusercontent.com/bronsonnh/streamlit_repo/main/earthquake_updated.csv')
+    data = pd.read_csv('https://raw.githubusercontent.com/bronsonnh/streamlit_repo/main/earthquake_updated_mr.csv')
     return data
 
 data = upload_data()
@@ -51,7 +51,7 @@ n_eqs_two_point_five_or_more = len(data[data["year"] == 2021])
 To provide a bit of context, please see the table below provided by Michigan Tech's [website](https://www.mtu.edu/geo/community/seismology/learn/earthquake-measure/magnitude/).
 """
 
-st.image("https://raw.githubusercontent.com/bronsonnh/streamlit_repo/main/eq_table.png")
+st.image("https://raw.githubusercontent.com/bronsonnh/streamlit_repo/main/eq_table_mr.png")
 
 
 
