@@ -162,7 +162,7 @@ st.pyplot(fig2)
 """
 
 """
-My conclusion is that there **does not** appear to be a significant uptick in earthquakes in Oregon or off the coast of Oregon in 2021. Additionally, across the US, there has been a modest increase in earthquakes between 2020 and 2021, however, it looks  it looks like 2011-2014 had a significantly higher number of earthquakes. It seems there has not been an increase in the number of earthquakes acrsos the US.
+My conclusion is that there **appears to be a significant uptick in earthquakes off the coast of Oregon in 2021** . Additionally, across the US, there has been a modest increase in earthquakes between 2019 and 2021 compared to 2011-2018, however, it looks  it looks like 2010 had higher number of earthquakes. It seems there has not been an increase in the number of earthquakes acrsos the US.
 While I have come to this conclusion, there is certainly more work to be done. Please feel free to use the data below, or check out the [USGS website](https://www.usgs.gov/programs/earthquake-hazards/earthquakes) which has extensive information on earthquakes globally.
 """
 
