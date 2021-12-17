@@ -36,7 +36,7 @@ n_eqs = len(data[data["year"] == 2021])
 
 """
 ## Basic Earthquake Facts:
-Number of Earthquakes in the US in 2021 over 2 Magnitude:
+Number of Earthquakes in the US in 2021 with a magnitude of 2 or greater:
 
 """
 st.header(n_eqs)
