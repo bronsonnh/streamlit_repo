@@ -32,18 +32,36 @@ def upload_data():
 data = upload_data()
 
 n_eqs = len(data[data["year"] == 2021])
+av_mag = round((data["mag"].mean()),2)
+n_eqs_two_point_five_or_more = len(data[data["year"] == 2021])
+avg_error = round((data["magError"].mean()),2)
 
 
 """
-## Basic Earthquake Facts:
-Number of Earthquakes in the US in 2021 with a magnitude of 2 or greater:
+## Basic Earthquake Facts & Graphs:
+
+###### Note the data considered is only for earthquakes with a magnitude of 2 or greater. 
+
+### Number of Earthquakes in the US in 2021:
 
 """
+
 st.header(n_eqs)
 
 
-n_eqs_two_point_five_or_more = len(data[data["year"] == 2021])
+"""
+### Average magnitude of earthquakes over the last 10 years:
 
+"""
+st.header(str(av_mag))
+
+
+"""
+### Average error in magnitude of reported earthquakes:
+"""
+st.header(avg_error)
+
+st.write("The number above is the estimated standard error for the magnitude of all earthquakes examined.") 
 
 
 
