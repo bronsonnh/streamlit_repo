@@ -26,7 +26,7 @@ Perhaps you can answer the question: Have earthquakes been increasing in number 
 
 def upload_data():
     #Function to load csv data into streamlit  
-    data = pd.read_csv('https://raw.githubusercontent.com/bronsonnh/streamlit_repo/main/earthquake_updated_mr.csv')
+    data = pd.read_csv('https://raw.githubusercontent.com/bronsonnh/streamlit_repo/main/earthquake_updated_2fin.csv')
     return data
 
 data = upload_data()
