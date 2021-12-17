@@ -143,7 +143,7 @@ st.map(or_boundary.loc[month_filter_o & year_filter_o & mag_filter_o, ['latitude
 
 
 """
-Looking at this map, the number of earthquakes in Oregon seem rather modest this year, over the last couple months. I have graphed the number of earthquakes per year below as well. 
+Looking at this map, the number of earthquakes in Oregon (including the areas off the coast) seem rather modest this year, over the last couple months. I have graphed the number of earthquakes per year below as well. 
 """
 
 or_year_value_counts = or_boundary['year'].value_counts(sort=False, ascending = False)
