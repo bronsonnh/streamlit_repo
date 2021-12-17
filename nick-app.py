@@ -129,7 +129,7 @@ st.map(data.loc[month_filter & year_filter & mag_filter, ['latitude', 'longitude
 # Map with filters, specifically for Oregon
 """
 
-or_boundary = data[data['latitude'].between(42,46.5) & data['longitude'].between(-130,-116.4)]
+or_boundary = data[data['latitude'].between(42,46.5) & data['longitude'].between(-135,-116.4)]
 
 month_input_o = st.slider('Month Filter Oregon', int(or_boundary['month'].min()), int(or_boundary['month'].max()))
 year_input_o = st.slider('Year Filter Oregon', int(or_boundary['year'].min()), int(or_boundary['year'].max()))
