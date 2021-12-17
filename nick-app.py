@@ -19,7 +19,7 @@ United States Geological Survey's earthquake database linked [here](https://www.
 This dashboard provides insight on frequency, location, and magnitude of earthquakes
 in the conterminous United States.
 \n
-The genesis of my idea to create this dashboard came from [this NPR article.](https://www.npr.org/2021/12/08/1062365995/50-earthquakes-hit-off-the-oregon-coast-but-scientists-say-theyre-no-great-shake)
+The genesis of my idea to create this dashboard came from [this CNN article.](https://www.google.com/search?q=cnn+earthquakes+oregon&oq=cnn+earthquakes+oregon&aqs=chrome..69i57j69i60.2443j0j7&sourceid=chrome&ie=UTF-8)
 This dashboard will allow users to look into the earthquake data, and filter it in several different manners.
 Perhaps you can answer the question: Have earthquakes been increasing in number or severity in the US, particularly on the West Coast.
 """
@@ -162,7 +162,7 @@ st.pyplot(fig2)
 """
 
 """
-My conclusion is that there **does not** appear to be a significant uptick in earthquakes in 2021. While there has been a modest increase since 2020, it looks like 2011-2014 had a significantly higher number of earthquakes.
+My conclusion is that there **does not** appear to be a significant uptick in earthquakes in Oregon or off the coast of Oregon in 2021. Additionally, across the US, there has been a modest increase in earthquakes between 2020 and 2021, however, it looks  it looks like 2011-2014 had a significantly higher number of earthquakes. It seems there has not been an increase in the number of earthquakes acrsos the US.
 While I have come to this conclusion, there is certainly more work to be done. Please feel free to use the data below, or check out the [USGS website](https://www.usgs.gov/programs/earthquake-hazards/earthquakes) which has extensive information on earthquakes globally.
 """
 
