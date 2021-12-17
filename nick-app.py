@@ -143,7 +143,7 @@ st.map(or_boundary.loc[month_filter_o & year_filter_o & mag_filter_o, ['latitude
 
 
 """
-Looking at this map, the number of earthquakes in Oregon (including the areas off the coast) seem to have increased massively. I have graphed the number of earthquakes per year below as well, you can see that the number of earthquakes between 2020 and 2021 has increased by over 350%. 
+Looking at this map, the number of earthquakes in Oregon (including the areas off the coast) seem to have increased massively. I have graphed the number of earthquakes per year below as well, you can see that the number of earthquakes between 2020 and 2021 has increased by **over 350%.** 
 """
 
 or_year_value_counts = or_boundary['year'].value_counts(sort=False, ascending = False)
