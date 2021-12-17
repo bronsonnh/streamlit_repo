@@ -101,7 +101,7 @@ fig = plt.figure(figsize=(10,4))
 plt.bar(year_value_dict.keys(), year_value_dict.values())
 plt.xlabel("Number of Earthquakes", fontsize=20)
 plt.ylabel("Year", fontsize=20)
-plt.title("Earthquakes per Year", fontsize=20)
+plt.title("Earthquakes per Year 2010-2021", fontsize=20)
 st.pyplot(fig)
 
 
