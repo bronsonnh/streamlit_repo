@@ -52,7 +52,7 @@ To provide a bit of context, please see the table below provided by Michigan Tec
 """
 
 
-
+st.image("https://raw.githubusercontent.com/bronsonnh/streamlit_repo/main/eq_table_mr.png")
 
 """
 # Map With Sliders to filter by month, year, earthquakes greater than a given strength.
