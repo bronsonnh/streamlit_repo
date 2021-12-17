@@ -21,7 +21,7 @@ in the conterminous United States.
 \n
 The genesis of my idea to create this dashboard came from [this CNN article.](https://www.google.com/search?q=cnn+earthquakes+oregon&oq=cnn+earthquakes+oregon&aqs=chrome..69i57j69i60.2443j0j7&sourceid=chrome&ie=UTF-8)
 This dashboard will allow users to look into the earthquake data, and filter it in several different manners.
-Perhaps you can answer the question: Have earthquakes been increasing in number or severity in the US, particularly on the West Coast.
+Perhaps you can answer the question: Have earthquakes been increasing in number or severity in the US, particularly on the West Coast?
 """
 
 def upload_data():
@@ -143,7 +143,7 @@ st.map(or_boundary.loc[month_filter_o & year_filter_o & mag_filter_o, ['latitude
 
 
 """
-Looking at this map, the number of earthquakes in Oregon (including the areas off the coast) seem rather modest this year, over the last couple months. I have graphed the number of earthquakes per year below as well. 
+Looking at this map, the number of earthquakes in Oregon (including the areas off the coast) seem to have increased massively. I have graphed the number of earthquakes per year below as well, you can see that the number of earthquakes between 2020 and 2021 has increased by over 350%. 
 """
 
 or_year_value_counts = or_boundary['year'].value_counts(sort=False, ascending = False)
