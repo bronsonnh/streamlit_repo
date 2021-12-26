@@ -27,7 +27,7 @@ expander_a.write('''##### Have earthquakes been increasing in number or severity
 
 def upload_data():
     #Function to load csv data into streamlit  
-    data = pd.read_csv('/Users/nicholasbronson/Metis_Nick/earthquake_updated_2fin.csv')
+    data = pd.read_csv('/https://raw.githubusercontent.com/bronsonnh/streamlit_repo/main/earthquake_updated_2fin.csv')
     return data
 
 data = upload_data()
