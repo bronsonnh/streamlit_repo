@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn  as sns
 from PIL import Image
 
+
 st.set_option('deprecation.showPyplotGlobalUse', False)
 sns.set_style('darkgrid')
 st.set_page_config(layout="wide")
