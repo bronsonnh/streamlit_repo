@@ -4,6 +4,8 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn  as sns
 from PIL import Image
+import psycopg2
+
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 sns.set_style('darkgrid')
