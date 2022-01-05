@@ -154,9 +154,10 @@ mag_filter_o = or_boundary['mag'] >= mag_input_o
 c2.map(or_boundary.loc[month_filter_o & year_filter_o & mag_filter_o, ['latitude', 'longitude']])
 
 
-"""
-Looking at this map, the number of earthquakes in Oregon (including the areas off the coast) seem to have increased massively. I have graphed the number of earthquakes per year below as well, you can see that the number of earthquakes between 2020 and 2021 has increased by **over 350%.** 
-"""
+c2.write('''If you examine the earthquakes off the coast of Oregon in December 2021, you will find the cluster of earthquakes mentioned in the 
+         article mentioned previously.''')
+
+
 
 or_year_value_counts = or_boundary['year'].value_counts(sort=False, ascending = False)
 or_year_value_counts = or_year_value_counts.reindex(index=year_value_counts.index[::-1])
@@ -209,6 +210,8 @@ plt.ylabel("Number of Earthquakes", fontsize=8)
 plt.title("Number of Earthquakes per Year in Oregon", fontsize=8)
 c5.pyplot(fig2)
 c6.write(' ')
+
+c4.write('You can see that the number of earthquakes in Oregon increased by **over 350% between 2020 and 2021.')
 
 
 """
