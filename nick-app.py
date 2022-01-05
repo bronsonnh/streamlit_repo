@@ -211,7 +211,7 @@ plt.title("Number of Earthquakes per Year in Oregon", fontsize=8)
 c5.pyplot(fig2)
 c6.write(' ')
 
-c5.write('You can see that the number of earthquakes in Oregon increased by **over 350% between 2020 and 2021.')
+c5.write('You can see that the number of earthquakes in Oregon increased by **over 350%** between 2020 and 2021.')
 
 
 """
