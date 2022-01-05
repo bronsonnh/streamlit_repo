@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import seaborn  as sns
 from PIL import Image
 
-
 st.set_option('deprecation.showPyplotGlobalUse', False)
 sns.set_style('darkgrid')
 st.set_page_config(layout="wide")
@@ -24,7 +23,7 @@ expander_a.write('''The genesis of my idea to create this dashboard came from [t
     This dashboard will allow users to look into the earthquake data, and filter it in several different manners.
     Perhaps you can answer the question:''')
 
-expander_a.write('''##### Have earthquakes been increasing in number or severity in the US, particularly on the West Coast?''')
+expander_a.write('''##### Has the number of earthquakes been increasing in the US, particularly in Oregon and off the coast of Oregon?''')
 
 def upload_data():
     #Function to load csv data into streamlit  
@@ -43,20 +42,20 @@ avg_error = round((data["magError"].mean()),2)
 expander_b = st.expander("Click here to see basic facts about earthquakes", expanded=False)
 
 ## Earthquake Facts 
-expander_b.write("""## Basic Earthquake Facts & Graphs:
-###### Note the data considered is only for earthquakes with a magnitude of 2 or greater. 
-### Number of Earthquakes in the US in 2021:
-""")
-expander_b.header(n_eqs)
+expander_b.write("""## Basic Earthquake Facts & Graphs:""")
+expander_b.write('Note data used in this app is only for earthquakes with a magnitude of 2 or greater.')
+expander_b.write('### Number of Earthquakes in the US in 2021:')
+
+expander_b.subheader(n_eqs)
 expander_b.write("""
 ### Average magnitude of earthquakes over the last 10 years:
 """)
-expander_b.header(av_mag)
+expander_b.subheader(av_mag)
 expander_b.write(
 """
 ### Average error in magnitude of reported earthquakes:
 """)
-expander_b.header(avg_error)
+expander_b.subheader(avg_error)
 expander_b.write("The number above is the estimated standard error for the magnitude of all earthquakes examined.") 
 
 expander_b.write(
@@ -101,14 +100,19 @@ expander_b.pyplot(fig)
 month_num_dict = {'January': 1, 'February': 2, 'March': 3, 'April': 4, 'May': 5 , 'June': 6, 'July': 7, 'August': 8, 
                   'September': 9, 'October': 10, 'November': 11,'December': 12}
 
-c1,c2 = st.columns((1,1))
+c1,c2, c3 = st.columns((1,1, 1))
 
 
 
 c1.write(
 """
-### Map to display number of earthquakes, sliders to choose month, year, and strength of earthquakes displayed.
+### Earthquakes in the US by Month 
 """)
+
+c1.write(""" You can use the filters below to select a given year, month, and threshold strength. The map will display all
+earthquakes in the month specified that are above the selected strength.
+""")
+
 
 ##Filter Creation - Filters for Month, Year, and Magnitude
 month_dd = c1.selectbox('Select the Month', (month_num_dict.keys()))
@@ -128,9 +132,9 @@ c1.map(data.loc[month_filter & year_filter & mag_filter, ['latitude', 'longitude
 
 
 
-c2.write('''### Map with filters, specifically for Oregon''')
-c2.markdown('##')
-
+c2.write('''### Earthquakes in Oregon by Month''')
+c2.write(""" You can use the filters below to select a given year, month, and threshold strength. The map will display all
+earthquakes that took place in Oregon fitting the criteria specified.""")
 
 or_boundary = data[data['latitude'].between(42,46.5) & data['longitude'].between(-135,-116.4)]
 
@@ -158,22 +162,53 @@ or_year_value_counts = or_boundary['year'].value_counts(sort=False, ascending = 
 or_year_value_counts = or_year_value_counts.reindex(index=year_value_counts.index[::-1])
 or_year_value_dict = dict(or_year_value_counts) 
 
-fig2 = plt.figure(figsize=(10,4))
-plt.plot(or_year_value_dict.keys(), or_year_value_dict.values())
-plt.xlabel("Year", fontsize=20)
-plt.ylabel("Number of Earthquakes", fontsize=20)
-plt.title("Number of Earthquakes per Year in Oregon", fontsize=20)
-c2.pyplot(fig2)
+
+st.write('## Top 5 US Earthquakes in Date Range')
+st.write('''To use the tool below, select a start month and year, as well as an end month and year. 
+The map will display the 5 strongest earthquakes measured by magnitude within the selected dates.
+Additionally, you can view data for the earthquakes below if you want to investigate personally.''')
+
+sel_top_five_start = st.selectbox('Select the Start Month   ', (month_num_dict.keys()))
+year_top_five_start = st.selectbox('Select the Start Year  ', range(int(data['year'].min()), int(data['year'].max() + 1)))
+
+sel_top_five_end = st.selectbox('Select the End Month   ', (month_num_dict.keys()))
+year_top_five_end = st.selectbox('Select the End Year  ', range(int(data['year'].min()), int(data['year'].max() + 1)))
+
+
+start_month = data['month'] >= month_num_dict[month_dd]
+end_month = data['month'] <= month_num_dict[month_dd]
+
+start_year = data['year'] >= year_top_five_start
+end_year = data['year'] <= year_top_five_end
+
+df_five = data[start_month & start_year & end_month & end_year].sort_values('mag', ascending = False).head(5)
+
+st.write(df_five)
+
+st.map(df_five)
+
 
 """
 # Conclusions and Next Steps
 """
+
+
 
 """
 My conclusion is that there **appears to be a significant uptick in earthquakes off the coast of Oregon in 2021** . Additionally, across the US, there has been a modest increase in earthquakes between 2019 and 2021 compared to 2011-2018, however, it looks  it looks like 2010 had higher number of earthquakes. It would not be fair to say there has been an increase in number of earthquakes across the US based on this analysis alone.
 While I have come to this conclusion, there is certainly more work to be done. Please feel free to use the data below, or check out the [USGS website](https://www.usgs.gov/programs/earthquake-hazards/earthquakes) which has extensive information on earthquakes globally.
 """
 
+c4,c5,c6 = st.columns((1,2,1))
+
+c4.write(' ')
+fig2, ax = plt.subplots(figsize=(5, 2))
+ax.plot(or_year_value_dict.keys(), or_year_value_dict.values())
+plt.xlabel("Year", fontsize=8)
+plt.ylabel("Number of Earthquakes", fontsize=8)
+plt.title("Number of Earthquakes per Year in Oregon", fontsize=8)
+c5.pyplot(fig2)
+c6.write(' ')
 
 
 """
