@@ -100,7 +100,7 @@ expander_b.pyplot(fig)
 month_num_dict = {'January': 1, 'February': 2, 'March': 3, 'April': 4, 'May': 5 , 'June': 6, 'July': 7, 'August': 8, 
                   'September': 9, 'October': 10, 'November': 11,'December': 12}
 
-c1,c2, c3 = st.columns((1,1, 1))
+c1,c2 = st.columns((1,1))
 
 
 
