@@ -139,7 +139,7 @@ earthquakes that took place in Oregon fitting the criteria specified.""")
 or_boundary = data[data['latitude'].between(42,46.5) & data['longitude'].between(-135,-116.4)]
 
 month_dd_o = c2.selectbox('Select the Month ', (month_num_dict.keys()))
-year_dd_o = c2.selectbox('Select the Year ', range(int(or_boundary['year'].min()), int(or_boundary['year'].max() + 1)))
+year_dd_o = c2.selectbox('Select the Year ', range(int(or_boundary['year'].min()), int(or_boundary['year'].max() + 2)))
 
 month_filter_o = data['month'] == month_num_dict[month_dd]
 
