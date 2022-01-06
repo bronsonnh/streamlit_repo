@@ -173,7 +173,7 @@ sel_top_five_start = st.selectbox('Select the Start Month   ', (month_num_dict.k
 year_top_five_start = st.selectbox('Select the Start Year  ', range(int(data['year'].min()), int(data['year'].max() + 1)))
 
 sel_top_five_end = st.selectbox('Select the End Month   ', (month_num_dict.keys()))
-year_top_five_end = st.selectbox('Select the End Year  ', range(int(data['year'].min()), int(data['year'].max() + 1)))
+year_top_five_end = st.selectbox('Select the End Year  ', range(int(data['year'].min()), int(data['year'].max() + 2)))
 
 
 start_month = data['month'] >= month_num_dict[month_dd]
