@@ -19,7 +19,7 @@ expander_a.write('''Welcome to this Earthquake dashboard. All data used in this 
 expander_a.write('''This dashboard provides insight on frequency, location, and magnitude of earthquakes
     in the contiguous United States (all states excluding Hawaii and Alaska).''')
     
-expander_a.write('''The genesis of my idea to create this dashboard came from [this CNN article.](https://www.google.com/search?q=cnn+earthquakes+oregon&oq=cnn+earthquakes+oregon&aqs=chrome..69i57j69i60.2443j0j7&sourceid=chrome&ie=UTF-8)
+expander_a.write('''The genesis of my idea to create this dashboard came from [this CNN article.](https://www.cnn.com/2021/12/08/weather/earthquake-swarm-oregon/index.html)
     This dashboard will allow users to look into the earthquake data, and filter it in several different manners.
     Perhaps you can answer the question:''')
 
